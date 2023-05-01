@@ -8,6 +8,7 @@
 
 body {
 	font-family: Arial;
+	font-weight: bold;
 }
 
 #score-keeper {
@@ -15,7 +16,7 @@ body {
 /*	grid-gap: 2rem;*/
 	grid-auto-flow: column;
 /*	padding: 2rem;*/
-	height: 100vh;
+	height: 90vh;
 }
 
 .digit {
@@ -26,10 +27,12 @@ body {
 
 .digit1 {
 	grid-area: d1;
+	text-align: right;
 }
 
 .digit2 {
 	grid-area: d2;
+	text-align: left;
 }
 
 .team-name {
@@ -69,7 +72,7 @@ body {
 	}
 
 	.digit {
-		font-size: 28vh;
+		font-size: 23vh;
 	}		
 
 }
@@ -80,7 +83,7 @@ body {
 	}
 
 	.digit {
-		font-size: 30vw;
+		font-size: 22vw;
 	}	
 
 }
