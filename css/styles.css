@@ -9,20 +9,17 @@
 body {
 	font-family: Arial;
 	font-weight: bold;
+	color: white;
 }
 
 #score-keeper {
 	display: grid;
-/*	grid-gap: 2rem;*/
 	grid-auto-flow: column;
-/*	padding: 2rem;*/
-	height: 90vh;
+	height: 100vh;
 }
 
 .digit {
-/*	grid-area: digit;*/
 	color: white;
-
 }
 
 .digit1 {
@@ -37,13 +34,14 @@ body {
 
 .team-name {
 	grid-area: teamname;
+	align-self: center;
 	justify-self: center;
 	font-size: 2rem;
 }
 
 .score-group {
 	display: grid;
-	grid-template-areas: 
+	grid-template-areas:
 	"d1 d2"
 	"teamname teamname";
 }
@@ -58,85 +56,25 @@ body {
 
 #settings {
 	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 2rem;
+	top: -1rem;
+	right: 1rem;
+	font-size: 5rem;
+	color: white;
 }
 
 
 @media (orientation:portrait) {
 	#score-keeper {
-		background: navajowhite;
 		grid-auto-flow: row;
-
 	}
 
 	.digit {
 		font-size: 23vh;
-	}		
-
+	}
 }
 
 @media (orientation:landscape) {
-	#score-keeper {
-		background: lightcoral;
-	}
-
 	.digit {
 		font-size: 22vw;
-	}	
-
-}
-/*
-header {
-	background: url('../images/00B2407_banner.jpg') var(--dark-lava) no-repeat;
-	height: 200px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	justify-content: space-between;
-}
-
-header > h1 {
-	padding-top: 1rem;
-}
-
-@media (orientation:portrait) {
-	header > h1 {
-		text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
-		line-height: 1.2;
 	}
-
 }
-
-@media (orientation:landscape) {
-	header {
-		background-position-x: center;
-	}
-
-	header > h1 {
-		margin-right: 1rem;	/*color: rgba(0, 0, 0, 0.6);*/
-		text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
-		line-height: 1.2;
-	}
-
-}
-
-header > h1, header > .adjectives {
-	text-align: right;
-	color: white;
-	margin-right: 2vw;
-}
-
-.title {
-	font-size: 2.5rem;
-}
-
-.subtitle {
-	font-size: 1.5rem;
-}
-
-.adjectives {
-	font-size: 1rem;
-	margin-bottom: 1vh;
-}*/

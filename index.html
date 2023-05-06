@@ -33,8 +33,17 @@
         <p class="team-name">Team 2</p>
     </fieldset>
 </form>
+
+<dialog id="settings-dialog">
+    <form method="dialog">
+        form
+        <button>Reset Score</button>
+        <button>OK</button>
+    </form>
+</dialog>
 <script type="module">
     import Scorer from "./scorer.js";
+
     window.addEventListener("load", (event) => {
         new Scorer();
     });

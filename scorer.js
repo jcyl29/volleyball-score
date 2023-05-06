@@ -8,25 +8,24 @@ export default class Scorer {
             min: 0,
             max: 25
         }
-        console.log(this.scores)
         this.bindEvents()
         this.renderScores()
     }
-
 
     bindEvents() {
         const buttons = Array.from(document.getElementsByClassName('digit'));
         buttons.forEach(b => {
             b.addEventListener('click', this.updateScore.bind(this))
         })
+
+        const dialog = document.getElementById('settings-dialog')
+        document.getElementById('settings').addEventListener('click', () => dialog.showModal())
     }
 
     updateScore(e) {
         const {target: {dataset}} = e
-        // debugger
         const action = dataset.action
         const team = dataset.team
-        console.log('dataset', dataset, action, team)
         const action2Method = {
             add: () => {
                 this.scores[team] < this.scoreRange.max ? this.scores[team]++ : this.scores[team]
