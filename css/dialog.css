@@ -1,0 +1,13 @@
+#settings-dialog {
+	font-size: 3vmax;
+}
+
+#settings-dialog [type=number] {
+	/*width: 13vmin;*/
+	border: solid 1px grey;
+}
+
+#settings-dialog label {
+	/*display: block;*/
+}
+

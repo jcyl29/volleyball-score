@@ -1,15 +1,17 @@
 export default class Scorer {
     constructor() {
+        this.defaults = {
+            scoreMin: 0, scoreMax: 25, showTeamNames: true
+        }
         this.scores = {
-            team1: 0,
-            team2: 0
+            team1: 0, team2: 0
         }
         this.scoreRange = {
-            min: 0,
-            max: 25
+            min: 0, max: 25
         }
         this.bindEvents()
         this.renderScores()
+        this.el = document.getElementById('score-keeper')
     }
 
     bindEvents() {
@@ -20,6 +22,25 @@ export default class Scorer {
 
         const dialog = document.getElementById('settings-dialog')
         document.getElementById('settings').addEventListener('click', () => dialog.showModal())
+
+        const form = document.getElementById('dialog-form')
+        form.addEventListener('submit', e => {
+            const data = new FormData(form)
+            for (const value of data.values()) {
+                // this shows nothing. formdata is empty
+                console.log('value', value)
+            }
+
+            this.el.classList.toggle('hide-team-names', form.elements['hide-team-name'].checked)
+            if (form.elements['toggle-reset-score'].checked) {
+                this.resetScores()
+            }
+        })
+    }
+
+    resetScores() {
+        this.scores.team1 = this.scores.team2 = 0
+        this.renderScores()
     }
 
     updateScore(e) {
@@ -29,8 +50,7 @@ export default class Scorer {
         const action2Method = {
             add: () => {
                 this.scores[team] < this.scoreRange.max ? this.scores[team]++ : this.scores[team]
-            },
-            minus: () => {
+            }, minus: () => {
                 this.scores[team] > this.scoreRange.min ? this.scores[team]-- : this.scores[team]
             }
         }

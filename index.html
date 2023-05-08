@@ -15,7 +15,8 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dialog.css">
     <script type="module" src="./scorer.js"></script>
 </head>
 <body>
@@ -35,10 +36,28 @@
 </form>
 
 <dialog id="settings-dialog">
-    <form method="dialog">
-        form
-        <button>Reset Score</button>
-        <button>OK</button>
+    <form method="dialog" id="dialog-form">
+        <label for="hide-team-name">Hide team names:</label>
+        <input type="checkbox" id="hide-team-name">
+
+        <label for="toggle-reset-score">Reset Score</label>
+        <input type="checkbox" id="toggle-reset-score">
+
+<!--        <label for="change-score-max">Score max</label>-->
+<!--        <input type="number" id="change-score-max" max="99" min="1">-->
+
+
+<!--        <fieldset>-->
+<!--            <p>Manually change score</p>-->
+<!--            <label>Team 1-->
+<!--                <input type="number" max="99" min="1" />-->
+<!--            </label>-->
+<!--            <label>Team 2-->
+<!--                <input type="number" max="99" min="1" />-->
+<!--            </label>-->
+<!--        </fieldset>-->
+        <br />
+        <button type="submit">OK</button>
     </form>
 </dialog>
 <script type="module">

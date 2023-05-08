@@ -16,6 +16,7 @@ body {
 	display: grid;
 	grid-auto-flow: column;
 	height: 100vh;
+	max-height: 100vh;
 }
 
 .digit {
@@ -37,6 +38,12 @@ body {
 	align-self: center;
 	justify-self: center;
 	font-size: 2rem;
+
+	/*display: none;*/
+}
+
+.hide-team-names .team-name {
+	display: none;
 }
 
 .score-group {
@@ -56,9 +63,9 @@ body {
 
 #settings {
 	position: absolute;
-	top: -1rem;
+	top: 0;
 	right: 1rem;
-	font-size: 5rem;
+	font-size: 4.5rem;
 	color: white;
 }
 
@@ -69,12 +76,20 @@ body {
 	}
 
 	.digit {
-		font-size: 23vh;
+		font-size: 59vmin;
+	}
+
+	.hide-team-names .digit {
+		font-size: 67vmin;
 	}
 }
 
 @media (orientation:landscape) {
 	.digit {
-		font-size: 22vw;
+		font-size: 58vmin;
+	}
+
+	.hide-team-names .digit {
+		font-size: 68vmin;
 	}
 }
